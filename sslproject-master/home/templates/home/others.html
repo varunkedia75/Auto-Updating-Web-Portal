@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/blank.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	{% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Others</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "home/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "home/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "home/sb-admin-2.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "home/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+ <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""><b>Login Portal</b></a>
+            </div>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav in" id="side-menu">
+
+                        <li>
+                            <a href="/login/basic_info">Basic Info</a>
+                        </li>
+
+                        <li>
+                            <a href="/login/teaching_page">Teachings</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/students_page">Students</a>
+
+                        </li>
+
+                         <li>
+                            <a href="/login/projects_page">Projects</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/publications_page">Publications</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/recognitions_page">Recognitions</a>
+                        </li>
+
+                        <li>
+                            <a href="/login/others_page">Others</a>
+                        </li>
+                        <li>
+                            <a href="/login/mail_crawl">Others</a>
+                        </li>
+                        <li>
+                            <a href="/logout"><strong>Logout</strong>                                                                                                      </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Other Engagements
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                            <form role="form" method="post" id="other" action="/login/others">
+                            	{% csrf_token %}
+                             <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>What?</label>
+                                            <input class="form-control" name="name" placeholder="Enter Name">
+
+
+                                        </div></div>
+
+                              <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>When?</label>
+                                            <input class="form-control" name="date" placeholder="Enter Date">
+
+
+                                        </div></div>
+
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Where?</label>
+                                            <input class="form-control" name="place" placeholder="Enter Place">
+
+
+                                        </div></div>
+
+                                        </form>
+                                         <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                           <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>What?</th>
+                                            <th>When?</th>
+                                            <th>Where?</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in user.others_set.all|dictsort:"date" %}
+                                             <form id="deleteformx{{ field.id }}" method="post" action="/login/deleteothers"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+                                                 <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                             <td>{{ forloop.counter }}</td>
+                                                <td>{{ field.name }}</td>
+                                                 <td>{{ field.date }}</td>
+                                                 <td>{{ field.place }}</td>
+
+                                             <td>
+                                                     <button type="submit" form="deleteformx{{ field.id }}" onclick="">
+                                                         <span style="color: red">❌</span>
+                                                     </button>
+                                                 </td>
+                                             </tr>
+                                             </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="other">Submit Button</button></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+
+
+
+                                           <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Invited Talks
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                            <form role="form" method="post" id="talks" action="/login/invitedtalks">
+                            	{% csrf_token %}
+
+                                          <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>When?</label>
+                                            <input type="date" class="form-control" name="date" placeholder="Enter Date">
+
+
+                                        </div></div>
+
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Topics_for_Talk</label>
+                                            <input class="form-control" name="topic" placeholder="Enter text">
+
+
+                                        </div></div>
+
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Inviting_Institue</label>
+                                            <input class="form-control" name="invited_by" placeholder="Enter Name">
+
+
+                                        </div></div>
+                                        </form>
+                                     <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                           <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>When?</th>
+                                            <th>Topic_for_Talk</th>
+                                            <th>Inviting_Institute</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in user.invitedtalks_set.all|dictsort:"date" %}
+                                             <form id="deleteformy{{ field.id }}" method="post" action="/login/deleteinvitedtalks"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+                                                 <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                             <td>{{ forloop.counter }}</td>
+                                                <td>{{ field.date }}</td>
+                                                 <td>{{ field.topic }}</td>
+                                                 <td>{{ field.invited_by }}</td>
+
+                                             <td>
+                                                     <button type="submit" form="deleteformy{{ field.id }}" onclick="">
+                                                         <span style="color: red">❌</span>
+                                                     </button>
+                                                 </td>
+                                             </tr>
+                                             </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="talks">Submit Button</button></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+
+
+                    <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Institute Responsibilities
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                            <form role="form" method="post" id="resp" action="/login/responsibilities">
+                            	{% csrf_token %}
+
+                                          <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Responsibility</label>
+                                            <input class="form-control" name="responsibility" placeholder="Enter Name">
+
+
+                                        </div></div>
+
+                              <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>From</label>
+                                            <input class="form-control" name="s_year" placeholder="Start Year">
+
+
+                                        </div></div>
+
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Upto</label>
+                                            <input class="form-control" name="e_year" placeholder="End Year">
+
+
+                                        </div></div>
+                                        </form>
+                                         <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                          <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Responsibility</th>
+                                            <th>From</th>
+                                            <th>Upto</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in user.responsibilities_set.all|dictsort:"e_year" %}
+                                             <form id="deleteformz{{ field.id }}" method="post" action="/login/deleteresponsibilities"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+                                                 <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                             <td>{{ forloop.counter }}</td>
+                                                <td>{{ field.responsibility }}</td>
+                                                 <td>{{ field.s_year }}</td>
+                                                 <td>{{ field.e_year }}</td>
+
+                                             <td>
+                                                     <button type="submit" form="deleteformz{{ field.id }}" onclick="">
+                                                         <span style="color: red">❌</span>
+                                                     </button>
+                                                 </td>
+                                             </tr>
+                                             </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="resp">Submit Button</button></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+   <script src="{% static "home/jquery.min.js" %}"></script>
+
+
+    <script src="{% static "home/bootstrap.min.js" %}"></script>
+
+
+    <script src="{% static "home/metisMenu.min.js" %}"></script>
+
+    <script src="{% static "home/sb-admin-2.js" %}"></script>
+
+
+            <script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+</body></html>

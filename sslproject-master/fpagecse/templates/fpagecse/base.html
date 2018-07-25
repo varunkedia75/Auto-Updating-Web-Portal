@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>IIT GUWAHATI</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    {% load static %}
+    <link href="{% static "home/fonts.css" %}" rel="stylesheet">
+    <link href="{% static "home/site.css" %}" rel="stylesheet" media="all">
+	<link href="{% static "fpagecse/fonts.css" %}" rel="stylesheet">
+	<link href="{% static "fpagecse/site.css" %}" rel="stylesheet" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:rgb(120, 120, 120);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #333;
+            color: white;
+            padding: 14px 20px;
+            margin: 0 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: 100%;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+              -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)}
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes animatezoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+               display: block;
+               float: none;
+            }
+            .cancelbtn {
+               width: 100%;
+            }
+        }
+    </style>
+    {% block head %}
+    {% endblock %}
+</head>
+<body {% block aa %}{% endblock %}>
+<header class="navbar navbar-static-top" id="top" role="banner">
+    <div class="container-fluid page">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <nav id="main-navbar" class="topnav collapse navbar-collapse" style="background-color:rgb(42,42,42);">
+            <a id="mainnav"></a>
+            <ul class="nav navbar-nav navbar-right" role="navigation"><li class="first"><a href="http://127.0.0.1:8000/">HOME</a></li>
+                <li class="dropdown"><a>Departments</a>
+                    <div class="dropdown-content">
+                        <a href="/departments/Comp">Computer Science and Engineering</a>
+                        <a href="/departments/Bios">Biosciences & Bioengineering</a>
+                        <a href="/departments/chem">Chemical Engineering</a>
+                        <a href="/departments/Chem">Chemistry</a>
+                        <a href="/departments/Civi">Civil Engineering</a>
+                        <a href="/departments/Desi">Design</a>
+                        <a href="/departments/Elec">Electronics & Electrical Engg.</a>
+                        <a href="/departments/Huma">Humanities and Social Sciences</a>
+                        <a href="/departments/Math">Mathematics</a>
+                        <a href="/departments/Mech">Mechanical Engineering</a>
+                        <a href="/departments/Phys">Physics</a>
+                    </div>
+                </li>
+                <li><a href="/">News</a></li>
+                <li><a href="#bottom">Contact Us</a></li>
+                <li class="last"><a href="/login/">Login</a></li>
+            </nav>
+            <form id="sitesearch" class="search-bar expanded" method="get" action="http://www.uchicago.in/search/results" role="search" style="">
+                <div class="search-bar-inner">
+                    <div class="wrap">
+                        <label for="searchtext" class="search-bar-help">Enter Search Below</label>
+                        <input type="text" name="GSAq" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">
+                        <button type="submit" class="search-submit ss-icon" disabled="">Search</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    <div style="background-color: black;margin:-19px;"  class="wthree_agile_top_header">
+    <div class="col-sm-1">
+    </div>
+              <div class="col-sm-2">
+                  <a href="http://127.0.0.1:8000/">
+                <img class="profile-image img-responsive pull-left" src="{% static 'home/images/iitg_logo.png' %}" alt="IIT Guwahati" style="height:120px;width:120px;" title="IIT Guwahati"/>
+                  </a>
+            </div>
+				<div class="logo-agileits">
+                    <h2 style="color: white;"><a style="color:off white;font-family:Acherus Militant;text-align:right;font-size:120%;" href="http://127.0.0.1:8000/"><b>IIT Guwahati</b></a></h2>
+                    <h1 style="color: white;">
+						{% if department == "Bios" %}
+						<b>Department of Biosciences & Bioengineering</b></h1>
+						{% elif department == "Comp" %}
+						<b>Department of Computer Science and Engineering </b></h1>
+						{% elif department == "Chem" %}
+						<b>Department of Chemistry</b></h1>
+						{% elif department == "chem" %}
+						<b>Department of Chemical Engineering</b></h1>
+						{% elif department == "Civi" %}
+						<b>Department of Civil Engineering</b></h1>
+						{% elif department == "Desi" %}
+						<b>Department of Design</b></h1>
+						{% elif department == "Elec" %}
+						<b>Department of Electronics & Electrical Engg.</b></h1>
+						{% elif department == "Huma" %}
+						<b>Department of Humanities and Social Sciences</b></h1>
+						{% elif department == "Math" %}
+						<b>Department of Mathematics</b></h1>
+						{% elif department == "Mech" %}
+						<b>Department of Mechanical Engineering</b></h1>
+						{% elif department == "Phys" %}
+						<b>Department of Physics</b></h1>
+						{% endif %}
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>
+    </header>
+
+{% block ab %}{% endblock %}
+
+
+<div class="container page">
+{% block ac %}{% endblock %}
+    <div class="row" role="main">
+    {% block ad %}{% endblock %}
+        <div class="col-md-3 col-md-pull-9 sidebar">
+        <div class="subnav">
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <ul id="nav-sub" class="nav navbar-nav">
+                    <li><a href="/departments/{{ department }}"><strong>ABOUT</strong></a></li>
+                    <li><a href="/departments/{{ department }}/allfaculty">All Faculties</a></li>
+                    <li class="first"><a href="/departments/{{ department }}/headofdepartment">Head of Department</a></li>
+                    <li><a href="/departments/{{ department }}/prof">Professors</a></li>
+                    <li><a href="/departments/{{ department }}/associate_prof">Associate Professors</a></li>
+                    <li><a href="/departments/{{ department }}/assistant_prof">Assistant Professors</a></li>
+                    <li class="last"><a href="/departments/{{ department }}/visiting_faculty">Visiting Faculties</a></li>
+                </ul>
+                </nav>
+        </div>
+    </div>
+    </div>
+</div>
+
+ <footer>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-9">
+                        <p><b>Indian Institute of Technology, Guwahati</b><br> Guwahati - 781039, India</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p><b>CONTACT :-</b><br>
+                        Phone : +91-361-2583000<br>
+                        Fax: +91-361-2690762<br>
+                        E-mail: pro@iitg.ernet.in</p>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+<!--<script type="text/javascript" async="" src="{% static "fpagecse/ga.js" %}">-->
+<!--</script><script src="{% static "./page22_files/modernizr.min.js" %}"></script>-->
+<!--<script src="{% static "fpagecse/jquery.min.js" %}"></script>-->
+<!--<script src="{% static "fpagecse/jquery-ui.min.js" %}"></script>-->
+<!--<script>window.jQuery || document.write('<script src="/js/libs/jquery/2.1.4/jquery.min.js"><\/script>');</script>-->
+<!--<script src="{% static "fpagecse/core-min.js" %}></script>-->
+<script type="text/javascript" async="" src="{% static "home/ga.js" %}></script>
+    <script src="{% static "home/modernizr.min.js" %}"></script>
+    <script src="{% static "home/jquery.min.js" %}"></script>
+    <script src="{% static "home/jquery-ui.min.js" %}"></script>
+    <script>window.jQuery || document.write('<script src="{% static "home/jquery.min.js" %}"><\/script>');</script>
+    <script src="{% static "home/core-min.js" %}"></script>
+
+
+<script>
+var _gaq=[['_setAccount','UA-3572058-1'],['_trackPageview'],['_setDomainName','www.uchicago.in'],['_setAllowAnchor', true]];(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+</script>
+<script>$("a[href='#bottom']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});</script>
+    {% block body %}
+{% endblock %}
+</body>
+</html>

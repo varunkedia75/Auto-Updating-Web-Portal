@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/blank.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    {% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>basic_info</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "home/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "home/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "home/sb-admin-2.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "home/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+<style>
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: red;
+}
+</style>
+
+</head>
+
+<body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""><b>Login Portal</b></a>
+            </div>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav in" id="side-menu">
+
+                        <li>
+                            <a href="/login/basic_info">Basic Info</a>
+                        </li>
+
+                        <li>
+                            <a href="/login/teaching_page">Teachings</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/students_page">Students</a>
+
+                        </li>
+
+                         <li>
+                            <a href="/login/projects_page">Projects</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/publications_page">Publications</a>
+                        </li>
+
+                         <li>
+                            <a href="/login/recognitions_page">Recognitions</a>
+                        </li>
+
+                        <li>
+                            <a href="/login/others_page">Others</a>
+                        </li>
+                        <li>
+                            <a href="/login/mail_crawl">Mail Crawl</a>
+                        </li>
+                        <li>
+                            <a href="/logout"><strong>Logout</strong></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+          <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Introduction
+                        </div>
+                        <div class="panel-body">
+
+                                <form role="form" method="post" id="intro" enctype="multipart/form-data" action="/login/basic">
+                                             {% csrf_token %}
+                                    <div class="col-lg-3">
+                                        {% if faculty.photo.url != "def.jpg" %}
+                                        <img src="{{ faculty.photo.url }}" height="100">
+                                        {% endif %}
+                                        <div class="form-group">
+                                            <label>Upload Profile Picture</label>
+                                            <input type="file" name="photo">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            {% if faculty == "" or faculty.faculty_name == "" %}
+                                            <input class="form-control" placeholder="Enter first name" name="faculty_name"/>
+                                            {% else %}
+                                            <input class="form-control"  name="faculty_name" value = {{ faculty.faculty_name }} />
+                                            {% endif %}
+                                        </div>
+                                        </div>
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+                                            {% if faculty == "" or faculty.last_name == "" %}
+                                            <input class="form-control" placeholder="Enter last name" name="last_name"/>
+                                            {% else %}
+                                            <input class="form-control"  name="last_name" value = {{ faculty.last_name }} />
+                                            {% endif %}
+                                        </div>
+                                        </div>
+                                         <div class="col-lg-4">
+                                         <div class="form-group">
+                                            <label>Department</label>
+                                             <select class="form-control" name="department">
+                                             {% if faculty == "" or faculty.department == "" %}
+                                                 <option disabled selected>Department name</option>
+                                                {% else %}
+                                                 <option selected>{{ faculty.department }}</option>
+                                                    {% endif %}
+                                                <option>Biosciences & Bioengineering</option>
+                                                <option>chemical Engineering</option>
+                                                <option>Chemistry</option>
+                                                <option>Civil Engineering</option>
+                                                <option>Computer Science and Engineering</option>
+                                                <option>Design</option>
+                                                <option>Electronics & Electrical Engineering</option>
+                                                <option>Humanities and Social Sciences</option>
+                                                <option>Physics</option>
+                                                <option>Mathematics</option>
+                                                <option>Mechanical Engineering</option>
+                                                </select>
+
+                                        </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                         <div class="form-group">
+                                            <label>Designation</label>
+                                            <select class="form-control" name="designation">
+                                                {% if faculty == "" or faculty.designation == "" %}
+                                                <option disabled selected>Designation</option>
+                                                {% else %}
+                                                 <option selected>{{ faculty.designation }}</option>
+                                                {% endif %}
+                                                <option>Head</option>
+                                                <option>Professor</option>
+                                                <option>Assistant Professor</option>
+                                                <option>Associate Professor</option>
+                                                <option>Visiting Faculties</option>
+                                            </select>
+                                        </div>
+                                        </div>
+
+                                       <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>Office</label>
+                                            {% if faculty == "" or faculty.room_no == "" %}
+                                            <input class="form-control" placeholder="Enter Room no." name="room_no" required>
+                                            {% else %}
+                                            <input class="form-control" value={{ faculty.room_no }} name="room_no" required>
+                                            {% endif %}
+                                        </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>Phone_number</label>
+                                            {% if faculty == "" or faculty.phone == "" %}
+                                            <input type="number" class="form-control" placeholder="Enter Phone number" name="phone"/>
+                                            {% else %}
+                                            <input type="number" class="form-control"  name="phone" value = {{ faculty.phone }} />
+                                            {% endif %}
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>E-mail_address</label>
+                                            {% if faculty == "" or faculty.email == "" %}
+                                            <input type="email" class="form-control" placeholder="Enter e-mail" name="email"/>
+                                            {% else %}
+                                            <input type="email" class="form-control"  name="email" value = {{ faculty.email }} />
+                                            {% endif %}
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="intro">Submit Button</button></div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                           <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Work Experience
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                             <form role="form" method="post" id="exp" action="/login/work">
+                            	{% csrf_token %}
+
+                                          <div class="col-lg-4">
+                                         <div class="form-group">
+                                            <label>Designation</label>
+                                            <select class="form-control" name="designation" required>
+                                                <option disabled selected>Designation</option>
+                                                <option>Head</option>
+                                                <option>Professor</option>
+                                                <option>Assistant Professor</option>
+                                                <option>Associate Professor</option>
+                                                <option>Visiting Faculties</option>
+                                            </select>
+                                        </div>
+                                        </div>
+
+                                         <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Department</label>
+                                            <input class="form-control" placeholder="Enter department name" name="department"/>
+
+
+                                            </div></div>
+
+                                        <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>Start_Year</label>
+                                            <input class="form-control" placeholder="Enter start year" name="s_year"/>
+
+
+                                            </div></div>
+                                        <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>End_Year</label>
+                                            <input class="form-control" placeholder="Enter end year" name="e_year"/>
+
+
+                                            </div></div>
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Institute</label>
+                                            <input class="form-control" placeholder="Enter institute name" name="institute"/>
+
+
+                                            </div></div>
+                                        </form>
+
+                                        <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                            <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Department</th>
+                                            <th>Start_Year</th>
+                                            <th>End_Year</th>
+                                            <th>Institute</th>
+                                            <th>Delete</th>
+
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in loo.work_set.all|dictsort:"e_year" %}
+                                             <form id="deleteform{{ field.id }}" method="post" action="/login/deletework"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                                 <tr>
+
+                                                    <td>{{ forloop.counter }}</td>
+
+                                                    <td style="overflow: hidden; word-break: break-all">{{ field.department }}</td>
+                                                     <td>{{ field.s_year }}</td>
+                                                     <td>{{ field.e_year }}</td>
+                                                     <td style="overflow: hidden; word-break: break-all">{{ field.institute }}</td>
+                                                     <td>
+                                                          <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                                         <button type="submit" form="deleteform{{ field.id }}" onclick="">
+                                                             <span style="color: red">❌</span>
+                                                         </button>
+                                                     </td>
+                                                 </tr>
+                                             </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="exp">Submit Button</button></div>
+
+                                        </div>
+                                        </div>
+                                        </div>
+
+
+
+                    <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Education
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                             <form role="form" method="post" id="education" action="/login/education">
+                             	{% csrf_token %}
+
+                                          <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Degree</label>
+                                            <input class="form-control" placeholder="Enter degree" name="degree"/>
+
+
+                                            </div></div>
+
+                                         <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>Year_of_Passing</label>
+                                            <input type="number" class="form-control" placeholder="Enter year" name="pass_year"/>
+
+
+                                            </div></div>
+
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Department</label>
+                                            <input class="form-control" placeholder="Enter department name" name="department"/>
+
+
+                                            </div></div>
+
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Institute</label>
+                                            <input class="form-control" placeholder="Enter institute name" name="institute"/>
+
+
+                                            </div></div>
+                                        </form>
+
+                                        <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                            <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Degree</th>
+                                            <th>Year_of_Passing</th>
+                                            <th>Department</th>
+                                            <th>Institute</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in loo.education_set.all|dictsort:"pass_year" %}
+                                             <form id="deleteformx{{ field.id }}" method="post" action="/login/deleteedu"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+
+                                             <td>{{ forloop.counter }}</td>
+
+                                                <td>{{ field.degree }}</td>
+                                                 <td>{{ field.pass_year }}</td>
+                                                 <td>{{ field.department }}</td>
+                                                 <td>{{ field.institute }}</td>
+                                                 <td>
+                                                     <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                                         <button type="submit" form="deleteformx{{ field.id }}" onclick="">
+                                                             <span style="color: red">❌</span>
+                                                         </button>
+                                                </td>
+                                             </tr>
+                                                 </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="education">Submit Button</button></div>
+
+                                        </div>
+                                        </div>
+                                        </div>
+
+                 <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        Research Intrest
+                        </div>
+                        <div class="panel-body">
+
+
+
+
+                            <form role="form" method="post" id="research" action="/login/research">
+                            	{% csrf_token %}
+
+
+
+                                         <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Intrested_Topics</label>
+                                            <input class="form-control" placeholder="Enter text" name="topic"/>
+
+
+                                            </div></div>
+
+
+                                        </form>
+
+
+                            <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                                         <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Intrested_Topics</th>
+                                            <th>Delete</th>
+
+
+                                        </tr>
+                                          </thead>
+                                            <tbody>
+                                             {% for field in loo.research_set.all %}
+                                             <form id="deleteformy{{ field.id }}" method="post" action="/login/deleteinterest"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+                                                 <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                             <td>{{ forloop.counter }}</td>
+                                                <td>{{ field.topic }}</td>
+                                                 <td>
+
+                                                         <button type="submit" form="deleteformy{{ field.id }}" onclick="">
+                                                             <span style="color: red">❌</span>
+                                                         </button>
+                                                </td>
+                                             </tr>
+                                                 </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+                                        <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="research">Submit Button</button></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static "home/jquery-basic.min.js" %}"></script>
+
+    <script src="{% static "home/bootstrap.min.js" %}"></script>
+
+    <script src="{% static "home/metisMenu.min.js" %}"></script>
+
+    <script src="{% static "home/sb-admin-2.js" %}"></script>
+
+    <script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+</body></html>

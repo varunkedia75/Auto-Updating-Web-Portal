@@ -1,0 +1,149 @@
+{% extends 'home/base.html' %}
+{% block aa %}id="home" class="landing wide" data-gr-c-s-loaded="true"{% endblock %}
+{% block ab %}
+        {% endblock %}
+{% block body %}
+	<div id="wrapper">
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="{% static "home/images/iitg1.jpg" %}" style="width:100%">
+      <div class="text"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="{% static "home/images/iitg2.jpg" %}" style="width:100%">
+      <div class="text"></div>
+    </div>
+
+
+
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="{% static "home/images/iitg4.jpg" %}" style="width:100%">
+      <div class="text"></div>
+    </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+    }
+    </script>
+
+
+
+            <!--<img src="{% static "home/iitg.jpg" %}" style="max-width:100%" >-->
+
+    <div id="intro" class="container page" role="main">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Indian Institute of Technology Guwahati, the sixth member of the IIT fraternity, was established in 1994.
+                    The academic programme of IIT Guwahati commenced in 1995.
+                    At present the Institute has eleven departments and five inter-disciplinary academic centres covering all the major
+                    engineering, science and humanities disciplines, offering BTech, BDes, MA, MDes, MTech, MSc and PhD programmes. Within a short period of time,
+                    IIT Guwahati has been able to build up world class infrastructure for carrying out advanced research and has been equipped with state-of-the-art scientific
+                    and engineering instruments.Indian Institute of Technology Guwahati's campus is on a sprawling 285 hectares plot of land on the north bank of the river Brahmaputra around 20 kms. from the heart of the city.
+                    With the majestic Brahmaputra on one side, and with hills and vast open spaces on others, the campus provides an ideal setting for learning.</p>
+
+            </div>
+        </div>
+    </div>
+    <div id="spotlight" class="container page" role="main">
+        <div class="row row-centered">
+
+            <div class="col-md-3 col-xs-6 col-centered">
+                <figure class="circle-photo">
+                    <a href="http://www.iitg.ernet.in/director/dirmsg.html">
+
+                        <img class="lazy" src="{% static "home/images/ProfGBiswas.jpg" %}" data-original="ProfGBiswas.jpg" alt=" " style="display: inline;">
+
+                        <figcaption>Director's Message</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid page grey">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><a href="http://127.0.0.1/news/">News</a></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 news">
+                <h3><a href="{{ x1 }}">{{ x2 }}</a></h3>
+                <!--<p>LOL<br><span class="pub">October 23, 2017</span></p>-->
+            </div>
+
+            <div class="col-md-4 news">
+                <h3><a href="{{ y1 }}">{{ y2 }}</a></h3>
+                <!--<p>LOL<br><span class="pub">September 19, 2017</span></p>-->
+            </div>
+
+            <div class="col-md-4 news">
+                <h3><a href="{{ z1 }}">{{ z2 }}</a></h3>
+                <!--<p>LOL<br><span class="pub">August 24, 2017</span></p>-->
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <footer>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-9">
+                        <p><b>Indian Institute of Technology, Guwahati</b><br> Guwahati - 781039, India</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p><b>CONTACT :-</b><br>
+                        Phone : +91-361-2583000<br>
+                        Fax: +91-361-2690762<br>
+                        E-mail: pro@iitg.ernet.in</p>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script type="text/javascript" async="" src="{% static "home/ga.js" %}></script>
+    <script src="{% static "home/modernizr.min.js" %}"></script>
+    <script src="{% static "home/jquery.min.js" %}"></script>
+    <script src="{% static "home/jquery-ui.min.js" %}"></script>
+    <script>window.jQuery || document.write('<script src="{% static "home/jquery.min.js" %}"><\/script>');</script>
+    <script src="{% static "home/core-min.js" %}"></script>
+
+    <script>
+        var _gaq=[['_setAccount','UA-3572058-1'],['_trackPageview'],['_setDomainName','www.uchicago.in'],['_setAllowAnchor', true]];(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+			</script>
+<script>$("a[href='#bottom']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});</script>
+{% endblock %}
+		<!--</body></html>-->

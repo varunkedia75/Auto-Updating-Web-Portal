@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html><head>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <!--{% block head %}-->
+    {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Login Form</title>
+  
+  <link rel="stylesheet" href="{% static "home/reset.min.css" %}">
+  <link rel="stylesheet" href="{% static "home/style.css" %}">
+  <link rel="stylesheet" href="{% static "home/style2.css" %}">
+  <link rel="stylesheet" href="{% static "home/style3.css" %}">
+  <link rel="stylesheet" href="{% static "home/style4.css" %}">
+<style>
+.lol:link, .lol:visited {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #339966;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.lol:hover {background-color: #133926}
+
+.lol:active {
+  background-color: #b33300;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+  <!--{% endblock %}-->
+</head>
+<!--{% block aa %}background="{% static "./Flat Login Form_files/abc.png" %}"{% endblock %}-->
+<body background="{% static "home/images/abc.png" %}">
+  <!--{% block body %}-->
+<div class="container">
+  <div class="info">
+    <a class="lol" href="http://127.0.0.1:8000/"><b>IIT Guwahati</b></a>
+  </div>
+</div>
+<div class="form">
+  <div class="thumbnail"><img src="{% static "home/images/logo.png" %}" height="auto" width="auto" ></div>
+
+  <form class="login-form" id="fm" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+    <input type="text" placeholder="Username" name="username">
+    <input type="password" placeholder="Password" name="password">
+    <div class="g-recaptcha" data-sitekey="6Le0zzoUAAAAAGtowH4qU5mI8i0s5ZzIEAJ3g0eH"></div>
+    <button type="submit" form="fm">Login</button>
+    <p class="message">Not registered? <a href="http://127.0.0.1:8000/signup/">Create an account</a></p>
+  </form>
+</div>
+  <script src="{% static "home/log.js" %}"></script>
+    <script src="{% static "home/index.js" %}"></script>
+<!--{% endblock %}-->
+
+
+</body></html>

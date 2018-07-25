@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://blackrockdigital.github.io/startbootstrap-sb-admin-2/pages/blank.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	{% load static %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Students</title>
+
+    <link href="{% static "home/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "home/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "home/sb-admin-2.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "home/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: red;
+}
+</style>
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+   <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=""><b>Login Portal</b></a>
+            </div>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav in" id="side-menu">
+
+                         <li>
+                            <a href="http://127.0.0.1:8000/login/basic_info">Basic Info</a>
+                        </li>
+
+                        <li>
+                            <a href="http://127.0.0.1:8000/login/teaching_page">Teachings</a>
+                        </li>
+
+                         <li>
+                            <a href="http://127.0.0.1:8000/login/students_page">Students</a>
+
+                        </li>
+
+                         <li>
+                            <a href="http://127.0.0.1:8000/login/projects_page">Projects</a>
+                        </li>
+
+                         <li>
+                            <a href="http://127.0.0.1:8000/login/publications_page">Publications</a>
+                        </li>
+
+                         <li>
+                            <a href="http://127.0.0.1:8000/login/recognitions_page">Recognitions</a>
+                        </li>
+
+                        <li>
+                            <a href="http://127.0.0.1:8000/login/others_page">Others</a>
+                        </li>
+                        <li>
+                            <a href="/login/mail_crawl">Mail Crawl</a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8000/logout"><strong>Logout</strong></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                          Sponsored Research Projects
+                        </div>
+                        <div class="panel-body">
+
+
+
+                            <form role="form" method="post" id="Projects" action="/login/students">
+                            {% csrf_token %}
+                                        <div class="col-lg-6">
+                                         <div class="form-group">
+                                            <label>Student Status</label>
+                                            <select class="form-control" name="status" required>
+                                                <option disabled selected>Student Status</option>
+                                                <option>Continuing Student</option>
+                                                <option>Completed Student</option>
+                                            </select>
+                                        </div>
+                                        </div>
+
+                                         <div class="col-lg-6">
+                                         <div class="form-group">
+                                            <label>Student Degree</label>
+                                            <select class="form-control" name="degree" required>
+                                                <option disabled selected>Student Degree</option>
+                                                <option>BTech</option>
+                                                <option>MTech</option>
+                                                <option>PHD</option>
+                                            </select>
+                                        </div>
+                                        </div>
+
+                                          <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Name of Supervisor</label>
+                                            <input class="form-control" name="supervisor" placeholder="Enter text">
+
+
+                                        </div></div>
+                                          <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Scholar Name</label>
+                                            <input class="form-control" name="scholar_name" placeholder="Enter Name">
+
+
+                                        </div></div>
+
+                                        <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Thesis Title</label>
+                                            <input class="form-control" name="thesis_title" placeholder="Thesis Title">
+
+
+                                        </div>
+                                        </div>
+
+
+                                            </form>
+
+                             <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+
+                                                    <table class="table">
+                                            <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Student Status</th>
+                                            <th>Student Degree</th>
+                                            <th>Name of Supervisor</th>
+                                            <th>Scholar Name</th>
+                                            <th>Thesis Title</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                            <tbody>
+                                             {% for field in user.students_set.all|dictsort:"status" %}
+                                             <form id="deleteform{{ field.id }}" method="post" action="/login/deletestudents"
+                                             onsubmit="return confirm('Do you really want to delete the row?');">
+                                                 {% csrf_token %}
+                                             <tr>
+                                                 <input type="number" name="deleteid" style="visibility: hidden" value="{{ field.id }}" />
+                                             <td>{{ forloop.counter }}</td>
+                                                <td>{{ field.status }}</td>
+                                                 <td>{{ field.degree }}</td>
+                                                 <td>{{ field.supervisor }}</td>
+                                                 <td>{{ field.scholar_name }}</td>
+                                                 <td>{{ field.thesis_title }}</td>
+                                                <td>
+                                                     <button type="submit" form="deleteform{{ field.id }}" onclick="">
+                                                         <span style="color: red">❌</span>
+                                                     </button>
+                                                 </td>
+                                             </tr>
+                                             </form>
+                                             {% endfor %}
+
+                                            </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+
+
+
+                                       <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-default" method="post" form="Projects">Submit Button</button></div>
+
+
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+     <script src="{% static "home/jquery.min.js" %}"></script>
+
+
+    <script src="{% static "home/bootstrap.min.js" %}"></script>
+
+
+    <script src="{% static "home/metisMenu.min.js" %}"></script>
+
+    <script src="{% static "home/sb-admin-2.js" %}"></script>
+            <script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+</body></html>

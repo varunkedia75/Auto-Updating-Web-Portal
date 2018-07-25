@@ -1,0 +1,456 @@
+{% extends 'fpagecse/base.html' %}
+<!--<!DOCTYPE html>-->
+<!--&lt;!&ndash; saved from url=(0031)https://www.uchicago.in/alumni/ &ndash;&gt;-->
+<!--<html class="Linux x86_64" lang="en">&lt;!&ndash;<![endif]&ndash;&gt;-->
+<!--<head>-->
+	<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+	<!--<title>Department of CSE</title>-->
+{% block head %}
+	<!--<meta name="description" content="">-->
+	<!--<meta name="keywords" content="">-->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">-->
+	<!--{% load static %}-->
+	<!--<link href="{% static "fpagecse/fonts.css" %}" rel="stylesheet">-->
+	<!--<link href="{% static "fpagecse/site.css" %}" rel="stylesheet" media="all">-->
+{% endblock %}
+
+	<!--<script>-->
+		<!--.dropbtn {-->
+			<!--background-color: #4CAF50;-->
+			<!--color: white;-->
+			<!--padding: 16px;-->
+			<!--font-size: 16px;-->
+			<!--border: none;-->
+			<!--cursor: pointer;-->
+		<!--}-->
+
+		<!--.dropdown {-->
+			<!--position: relative;-->
+			<!--display: inline-block;-->
+		<!--}-->
+
+		<!--.dropdown-content {-->
+			<!--display: none;-->
+			<!--position: absolute;-->
+			<!--background-color: #f9f9f9;-->
+			<!--min-width: 160px;-->
+			<!--box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);-->
+			<!--z-index: 1;-->
+		<!--}-->
+
+		<!--.dropdown-content a {-->
+			<!--color: black;-->
+			<!--padding: 12px 16px;-->
+			<!--text-decoration: none;-->
+			<!--display: block;-->
+		<!--}-->
+
+		<!--.dropdown-content a:hover {background-color: #f1f1f1}-->
+
+		<!--.dropdown:hover .dropdown-content {-->
+			<!--display: block;-->
+		<!--}-->
+
+		<!--.dropdown:hover .dropbtn {-->
+			<!--background-color: #3e8e41;-->
+		<!--}-->
+	<!--</script>-->
+<!--</head>-->
+{% block aa %}id="alumni"{% endblock %}
+{% block ab %}
+   <!--<div style="background-color: black;margin:-21px;"  class="wthree_agile_top_header">-->
+    <!--<div class="col-sm-1">-->
+    <!--</div>-->
+              <!--<div class="col-sm-2">-->
+                  <!--<a href="http://127.0.0.1:8000/">-->
+                <!--<img class="profile-image img-responsive pull-left" src="{% static 'home/images/iitg_logo.png' %}" alt="IIT Guwahati" style="height:120px;width:120px;" title="IIT Guwahati"/>-->
+                  <!--</a>-->
+            <!--</div>-->
+				<!--<div class="logo-agileits">-->
+                    <!--<h2 style="color: white;"><a style="color:off white;font-family:Acherus Militant;text-align:right;font-size:120%;" href="http://127.0.0.1:8000/"><b>IIT Guwahati</b></a></h2>-->
+                    <!--<h1 style="color: white;">-->
+						<!--{% if department == "Bios" %}-->
+						<!--<b>Department of Biosciences & Bioengineering</b></h1>-->
+						<!--{% elif department == "Comp" %}-->
+						<!--<b>Department of Computer Science and Engineering </b></h1>-->
+						<!--{% elif department == "Chem" %}-->
+						<!--<b>Department of Chemistry</b></h1>-->
+						<!--{% elif department == "chem" %}-->
+						<!--<b>Department of Chemical Engineering</b></h1>-->
+						<!--{% elif department == "Civi" %}-->
+						<!--<b>Department of Civil Engineering</b></h1>-->
+						<!--{% elif department == "Desi" %}-->
+						<!--<b>Department of Design</b></h1>-->
+						<!--{% elif department == "Elec" %}-->
+						<!--<b>Department of Electronics & Electrical Engg.</b></h1>-->
+						<!--{% elif department == "Huma" %}-->
+						<!--<b>Department of Humanities and Social Sciences</b></h1>-->
+						<!--{% elif department == "Math" %}-->
+						<!--<b>Department of Mathematics</b></h1>-->
+						<!--{% elif department == "Mech" %}-->
+						<!--<b>Department of Mechanical Engineering</b></h1>-->
+						<!--{% elif department == "Phys" %}-->
+						<!--<b>Department of Physics</b></h1>-->
+						<!--{% endif %}-->
+				<!--</div>-->
+
+				<!--<div class="clearfix"> </div>-->
+			<!--</div>-->
+        {% endblock %}
+<!--<body id="alumni">-->
+
+	<!--<div id="wrapper">-->
+
+  <!--<div class="container-fluid page">-->
+
+    <!--<nav id="main-navbar" class="topnav collapse navbar-collapse">-->
+      <!--<a id="mainnav"></a>-->
+      <!--<ul class="nav navbar-nav navbar-right" role="navigation"><li class="first"><a href="http://127.0.0.1:8000">HOME</a></li>-->
+		<!--<li class="dropdown"><a>Departments</a>-->
+			<!--<div class="dropdown-content">-->
+				<!--<a href="http://127.0.0.1:8000/departments/cse/">Computer Science and Engineering</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Biosciences & Bioengineering</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Chemical Engineering</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Chemistry</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Civil Engineering</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Design</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Electronics & Electrical Engg.</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Humanities and Social Sciences</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Mathematics</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Mechanical Engineering</a>-->
+				<!--<a href="http://127.0.0.1:8000/departments/">Physics</a>-->
+			<!--</div>-->
+		<!--</li>-->
+		<!--<li><a href="">NEWS</a></li>-->
+		<!--<li><a href="">CONTACT US</a></li>-->
+		<!--<li class="last"><a href="">LOG IN</a></li>-->
+	<!--</ul>-->
+    <!--</nav>-->
+    <!--<form id="sitesearch" class="search-bar expanded" method="get" action="https://www.uchicago.in/search/results/" role="search">-->
+      <!--<div class="search-bar-inner">-->
+        <!--<div class="wrap">-->
+          <!--<label for="searchtext" class="search-bar-help">Enter Search Below</label>-->
+          <!--<input type="text" name="GSAq" id="searchtext" class="search-field" value="" autocomplete="off" placeholder="Search…">-->
+          <!--<button type="submit" class="search-submit ss-icon">Search</button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</form>-->
+  <!--</div>-->
+<!--<div class="container-fluid page">-->
+    <!--<img src="{% static "fpagecse/cse.jpg" %}" style="width:100%" height=175>-->
+<!--</div>-->
+<!--<img src="{% static "fpagecse/cse.jpg" %}">-->
+		<!--<div class="container page">-->
+	{% block ac %}
+			<div class="row">
+				<div class="col-md-9 col-md-push-3">
+					<h1>About the Department</h1>
+				</div>
+			</div>
+	{% endblock %}
+			<!--<div class="row" role="main">-->
+	{% block ad %}
+			{% if department == "Comp" %}
+				<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/cse_about.jpg" %}" style="width:400px;length:80px;">
+					<img src="{% static "home/images/cse2.jpg" %}" style="width:400px;length:80px;">
+					<p>
+						<br>
+	                    The Department of Computer Science and Engineering at the Indian Institute of Technology Guwahati,
+						was formed in 1995.
+						Since its inception, the department has always been recognized all over the world for excellence
+						in research and teaching. The Department provides an outstanding research environment complemented
+						by superior teaching for its students to flourish in. The major areas of research include Algorithms,
+						Computational Geometry, Mobile Robotics, Artificial Intelligence, Speech Processing,
+						Natural Language Processing, Image Processing, Software Engineering, Formal Verification,
+						Electronic CAD, Computer Systems & Security, Networks. Besides theoretical research, faculty
+						in the department also maintain strong ties with many reputed national and international
+						companies and are involved in a large number of projects in the forefronts of cutting edge
+						technology.
+					</p>
+				</div>
+			{% elif department == "Bios" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<p>
+	                    The Department of Biosciences and Bioengineering at the Indian Institute of Technology Guwahati
+						(IITG) was established in November 2002 to contribute the fascinating and emerging area of
+						biological sciences. It has both undergraduate (B.Tech.) and postgraduate (M.Tech. and Ph.D.)
+						academic programmes. The Department is unique in North-Eastern India, imparting quality education
+						and providing an excellent research environment through its ongoing programmes. It imparts
+						training for students to make them competent, motivated engineers and scientists.
+						The department has 40 faculty members from diverse streams and specializations. The department
+						has developed extensive research facility and infrastructure to support the ongoing teaching and research initiatives.
+<br><br>
+The major thrust of the department includes biochemical engineering, tissue engineering, plant biotechnology,
+						nanobiotechnology, computational biology, cancer biology, infectious diseases and proteomics.
+						The department has initiated efforts to establish advanced research laboratories in all the
+						thrust areas. Apart from fundamental research, the department aims to meet the targeted demands
+						to cater the requirements of biotechnology based industries.
+					</p>
+				</div>
+{% elif department == "chem" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/chemical_about.jpg" %}" style="width:800px;length:80px;">
+
+					<p>
+						<br>
+				Welcome to the department of Chemical Engineering at Indian Institute of Technology Guwahati
+						. Started functioning in 2002, the department is a major academic host offering B. Tech.
+						, M. Tech., and Ph. D. in Chemical Engineering. The department is endowed with young,
+						vibrant and dynamic faculty well qualified to impart high quality teaching and research
+						in Chemical Engineering. The research interests of the faculty vary broadly ranging from
+						nano scale to meso scale systems/technology that may demand a collaborative approach with
+						Chemistry, Materials Science, Bio-technology, Computing and Electronics.
+					</p>
+				</div>
+
+{% elif department == "Chem" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/chemistry_about.jpg" %}" style="width:400px;length:80px;">
+					<img src="{% static "home/images/chemistry2.jpg" %}" style="width:400px;length:80px;">
+					<p>
+						<br>
+				Department of Chemistry, Indian Institute of Technology Guwahati is one of the globally
+						recognized, emerging and leading department in science and technology with a growing
+						list of accolades earned nationally and internationally. The Department started in 1995,
+						covers all the major areas of Chemistry, viz. inorganic, organic, physical and theoretical
+						chemistry. In addition to teaching chemistry courses to the undergraduate students of B.Tech
+						in Chemical Science and Technology (CST) & advanced chemistry courses to the students of M.Sc.
+						and the research scholars intending to do Ph.D., the department is actively engaged in research
+						in the frontier areas of topical importance. The faculties are actively involved in sponsored
+						research projects.
+					</p>
+				</div>
+
+{% elif department == "Civi" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/civil_about.jpg" %}" style="width:800px;length:80px;">
+
+					<p>
+						<br>
+
+
+Civil Engineering is considered to be the most versatile branch among all the engineering branches. It is
+						the branch with a lot of diversity from Geotechnical Engineering to Structural engineer
+						ing, Environmental to Hydraulics, Transportation to Hydrology; Civil Engineering can be
+						considered as a single largest branch among all the engineering branches.<br><br>
+
+The Department of Civil Engineering since its formation is committed to research and development in So
+						cietal Infrastructure. The vision of the department is to give an exposure to Ci
+						vil Engineers to various challenges in the profession.
+<br><br>
+The department offers courses at B.Tech., M.Tech. and Ph.D. programmes. The main areas of research in
+						clude Earth System Science and Engineering, Environmental Engineering, Geotec
+						hnical Engineering, Infrastructure Engineering and Management, Structural Engi
+						neering, Transportation Engineering and Water Resources Engineering. The depa
+						rtment also provides consultancy services for challenging infrastructure projects.
+
+					</p>
+				</div>
+
+{% elif department == "Desi" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/design_about.jpg" %}" style="width:400px;length:80px;">
+					<img src="{% static "home/images/design2.jpg" %}" style="width:400px;length:80px;">
+					<p>
+						<br>
+						The Department of Design(DoD), one of the thirteen departments at IIT Guwahati, was set up with a vis
+						ion to enkindle some of the brightest technical minds of the country a passion for innovation in tech
+						nology driven by a firm understanding, appreciation and celebration of design.<br><br>
+
+The department offers an M.Des. degree, a B.Des. degree (the only undergraduate level degree of its kind in an
+						Indian Institute of Technology) and a PhD degree in Design. The focus of the
+						program is on the study, invention, and creative use of technologies to crea
+						te effective, usable, enjoyable experiences with technology through interdisc
+						iplinary research in engineering, design, behavioral and social sciences, and
+						to understand the impact of technology on individuals, groups, and organizati
+						ons. The department envisions to produce successful graduates who will be cap
+						able of leading the changing scenarios of today and tomorrow through thought,
+						innovation and values.<br><br>
+
+The institute is situated in North Guwahati, Assam, on the north bank of the r
+						iver Brahmaputra amidst breathtaking natural beauty and
+						serenity. The full fledged campus sprawls over 285 hectares o
+						f gently undulating terrain with several hillocks covered with lush g
+						reen vegetation, a few lakes and a panoramic view of the mighty river on on
+						e side and a ring of blue hills on the other. The Institute is conveniently a
+						ccessible from all the transport hubs in the Guwahati city.
+
+					</p>
+				</div>
+
+{% elif department == "Elec" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+
+					<img src="{% static "home/images/ece2.jpg" %}" style="width:800px;length:80px;">
+					<p>
+						<br>
+The department was established during the inception of the institute in 1995 as the department of Electronics
+						and Communication Engineering (ECE). Since its commencement, the primary objective of
+						the department has been to impart quality education, training and research at the undergr
+						aduate, postgraduate and doctoral levels in various areas of Electronics and Communicati
+						on Engineering with broad emphasis on design aspects of electronic systems.
+					</p>
+				</div>
+
+{% elif department == "Huma" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<p>
+			   The Department of Humanities and Social Sciences at IIT Guwahati is a centre for research
+						and teaching composed of academics from eight different disciplines: Economics, E
+						nglish, Linguistics, Philosophy, Psychology, Sociology, History & Archaeology and
+						Political Science. With its varied range of research interests and expertise, the
+						department promotes interdisciplinary work in humanities and social sciences, offer
+						ing projects, supervision and fellowships aimed to attract students and researchers
+						from diverse academic and cultural backgrounds. Apart from its undergraduate B.Tech
+						taught courses which include uniquely designed content offered by members of faculty
+						, the department offers highly interdisciplinary areas of expertise and investigation
+						in its MA and PhD programmes. The MA in Development Studies is a multi-disciplinary pr
+						ogramme initiated in the year 2009 and is designed to provide an advanced understandin
+						g of the cultures, conflicts and discourses in issues involving development in ideologi
+						cal as well as real social situations, through innovative course work and supervised re
+						search. The PhD programme of the department promotes dialogues across different discipl
+						ines in humanities and social sciences, offering expert supervision in eight different a
+						reas of study as well as funded fellowships to selected full-time researchers. The depar
+						tment collaborates with related Indian as well as international institutions in projects
+						and workshops in order to promote and produce cutting-edge work in humanities and social
+						sciences. Placing a high premium on research output and outreach, the department consiste
+						ntly publishes academic articles, project reports and monographs which corroborate the qu
+						ality of work undertaken by its faculty, fellows and researchers.
+					</p>
+				</div>
+
+{% elif department == "Math" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/mnc_about.jpg" %}" style="width:400px;length:80px;">
+					<img src="{% static "home/images/mnc2.jpg" %}" style="width:400px;length:80px;">
+					<p>
+						<br>
+	The department has at present 40 energetic and dedicated faculty members in many diverse
+						areas of mathematics, and it also boasts of hosting visits of a good
+						number of distinguished mathematicians every year.
+						<br><br>
+The department has its own state-of-the-art computing laboratories and it also hosts the National Boa
+						rd of Higher Mathematics (NBHM) Regional Library. The department has also been a
+						ctively engaged in organizing conferences, workshops, QIP short term courses and training
+						programmes for both teachers and students including Mathematics Training and Talent Sear
+						ch Programme (MTTS) and Advanced Training in Mathematics (ATM) Schools.<br><br>
+
+
+Having started the PhD programme in 1996, the department initiated a 2-year M.Sc. programme in Mathemati
+						cs and Computing in 2000. From academic year 2006-2007, the department started a u
+						nique 4-year B.Tech. programme in Mathematics and Computing - the first of its kind
+						in the country. This unique programme comprises of courses in mathematics, statistics
+						, computer science and financial engineering. The department also supports all the eng
+						ineering and science departments by offering core and advance courses in mathematics at
+						the undergraduate B.Tech. Level over a number of semesters. The department is likely s
+						tart a dual degree M.Sc-PhD programme in near future.<br><br>
+
+Many of the graduated students have gone for higher studies in reputed universities abroad and within
+						India. Regarding campus placement, some of the recruiters of our students are
+						Adobe, Amazon, Bank of America, Deloitte, Ericsson, Facebook, Infosys, Xerox Re
+						search, Microsoft, Oracle, Samsung, PWC. <br><br>
+					</p>
+				</div>
+
+{% elif department == "Mech" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/mech_about.jpg" %}" style="width:400px;length:80px;">
+					<img src="{% static "home/images/mech2.jpg" %}" style="width:400px;length:80px;">
+					<p>
+						<br>
+				The department of mechanical engineering, being one of the largest and oldest departments of the ins
+						titute, caters to its students with class tutorial and state-of-the-art laboratories. The d
+						epartment is continuously striving to achieve excellence in education, academic and industr
+						y oriented research as well as consultancy work with service to the society.
+<br><br>
+We aim to provide our students with a perfect blend of intellectual and practical experiences, that he
+						lps them to serve our society and address a variety of needs. At the end of our p
+						rogram, students are prepared for entry-level work as a mechanical engineer as wel
+						l as for the post-graduate study in mechanical engineering or in another disciplin
+						e, where a fundamental engineering background constitutes a desirable foundation. Aca
+						demic course work and projects are designed to endow students with the ability to appl
+						y knowledge of science, mathematics, and engineering, and the capability to work effect
+						ively in multidisciplinary teams, providing leadership and technical expertise.
+<br><br>
+With a solid grounding in the principles and practice of mechanical engineering, our undergraduates are ready to
+						engage in ethical approaches to engineering, with concern for society and the environme
+						nt. Our program at the postgraduate level aligns academic course work with research, to
+						prepare scholars in specialized areas within the field of mechanical engineering. Resear
+						ch topics focus on industrial needs.
+<br><br>
+The department aptly makes use of the technical facility of the workshop in teaching and in sett
+						ing up of in-house experimental set-ups. Apart from carrying out practica
+						l classes as per academic curriculum, workshop caters to needs of differen
+						t departments of the Institute in terms of executing works of their B.Tech.
+						, M.Tech. and Ph.D. students as well as other related research/consultancy w
+						orks. The department also welcomes students from other departments of the ins
+						titute as a gesture of support to their time-to-time academic and research need
+						s. Both undergraduates and postgraduates are well placed in leading industries a
+						s well as in the higher research level institutions of international recognition.
+						Our website will take you to the tour of different research facilities, academic pr
+						ogrammes offered and the faculty/staff who are contributing to the department to mak
+						e it a success. We hope you enjoy our webpage!
+					</p>
+				</div>
+
+{% elif department == "Phys" %}
+					<div class="col-md-9 col-md-push-3 main-content">
+					<img src="{% static "home/images/ep_about.jpg" %}" style="width:650px;length:80px;">
+
+					<p>
+						<br>
+				The Department of Physics at the Indian Institute of Technology Guwahati, was formed
+						in 1995. The Department has highly active and vibrant faculty members committed t
+						o impart high quality research standards in pure and applied areas of physics and
+						also trains students to become competent and motivated physicists. The research i
+						nterests of the faculty members cover broad range of physics: Condensed Matter Physics
+						, Lasers and Photonics, High Energy, Theoretical, Mathematical Physics and Astrophysic
+						s. The department has state-of-the-art research laboratories and computational faciliti
+						es. The department currently offers four year B. Tech. (Engineering Physics), two year
+						M. Sc. and Ph. D programs.Such programs have been assisted by sophisticated B. Tech. a
+						nd M. Sc. Laboratories.
+					</p>
+				</div>
+			{% endif %}
+				<!--<div class="col-md-3 col-md-pull-9 sidebar">-->
+					<!--&lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;-->
+					<!--<div class="subnav">-->
+						<!--<nav class="navbar navbar-default" role="navigation">-->
+							<!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
+							<!--<ul id="nav-sub" class="nav navbar-nav">-->
+								<!--<li><a href="http://127.0.0.1:8000/departments/cse/allfaculty">All Faculties</a></li>-->
+								<!--<li class="first"><a href="">Head of Department</a></li>-->
+								<!--<li><a href="">Professors</a></li>-->
+								<!--<li><a href="">Associate Proff.</a></li>-->
+								<!--<li><a href="">Assistant Proff.</a></li>-->
+								<!--<li class="last"><a href="">Visiting Faculties</a></li>-->
+							<!--</ul>-->
+						<!--</nav>-->
+					<!--</div>-->
+				<!--</div>-->
+{% endblock %}
+			<!--</div>-->
+		<!--</div>-->
+<!--<footer>-->
+		<!--<div class="row">-->
+			<!--<div class="col-sm-12">-->
+				<!--<p class="timestamp"><b>© SSL-CSE 2016</b></p>-->
+
+		<!--</div>-->
+	<!--</div>-->
+<!--</footer>-->
+
+<!--<script type="text/javascript" async="" src="{% static "fpagecse/ga.js" %}"></script><script src="./page22_files/modernizr.min.js"></script>-->
+<!--<script src="{% static "fpagecse/jquery.min.js" %}"></script>-->
+<!--<script src="{% static "fpagecse/jquery-ui.min.js" %}"></script>-->
+<!--<script>window.jQuery || document.write('<script src="/js/libs/jquery/2.1.4/jquery.min.js"><\/script>');</script>-->
+<!--<script src="{% static "fpagecse/core-min.js" %}></script>-->
+
+
+<!--&lt;!&ndash; Google Analytics &ndash;&gt;-->
+<!--<script>-->
+<!--var _gaq=[['_setAccount','UA-3572058-1'],['_trackPageview'],['_setDomainName','www.uchicago.in'],['_setAllowAnchor', true]];(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
